@@ -1,0 +1,47 @@
+{
+  "name": "iitmandi-nav",
+  "private": true,
+  "version": "3.6.0",
+  "type": "module",
+  "description": "IIT Mandi campus navigation \u2014 accurate 3D outdoor digital twin + indoor navigation shell",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "bake": "python3 tools/bake_tiles.py",
+    "data": "python3 tools/build_data.py",
+    "verify": "python3 tools/verify_accuracy.py",
+    "shots": "node tools/shots.mjs",
+    "verify:all": "npx tsc --noEmit && ./node_modules/.bin/vitest run && python3 tools/verify_accuracy.py && node tools/shots.mjs && node tools/probe-capabilities.mjs && node tools/probe-floor.mjs",
+    "probe": "node tools/probe-capabilities.mjs",
+    "probe:floor": "node tools/probe-floor.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "9.114.0",
+    "@react-three/fiber": "8.17.10",
+    "maplibre-gl": "4.7.1",
+    "qrcode": "1.5.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.166.1",
+    "zod": "3.23.8",
+    "zustand": "4.5.5"
+  },
+  "devDependencies": {
+    "@types/qrcode": "1.5.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "@types/three": "0.166.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "autoprefixer": "10.4.20",
+    "playwright": "^1.47.2",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.14",
+    "typescript": "5.6.3",
+    "vite": "^5.4.21",
+    "vitest": "2.1.4"
+  }
+}

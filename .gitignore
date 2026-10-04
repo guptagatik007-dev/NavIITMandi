@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+tools/tilecache/
+tools/terrain_grid.npy
+tools/raw/*.json
+.env
+.env.*
+*.log
+.DS_Store

@@ -1,0 +1,4 @@
+{
+  "note": "Paths/roads drawn by hand in the editor (start → waypoints → end) where the generated network was missing a connection.",
+  "roads": []
+}

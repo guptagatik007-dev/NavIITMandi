@@ -1,0 +1,46 @@
+{
+  "imagery": {
+    "zoom": 17,
+    "bbox": {
+      "west": 76.975,
+      "south": 31.768,
+      "east": 77.006,
+      "north": 31.789
+    },
+    "width": 2889,
+    "height": 2302,
+    "mpp": 1.0152872146337166,
+    "attribution": "Imagery (c) Esri, Maxar, Earthstar Geographics",
+    "crop_px": [
+      190,
+      244,
+      3079,
+      2546
+    ]
+  },
+  "terrain": {
+    "grid": [
+      768,
+      614
+    ],
+    "bbox": {
+      "west": 76.975,
+      "south": 31.768,
+      "east": 77.006,
+      "north": 31.789
+    },
+    "minM": 954.19,
+    "maxM": 1660.84,
+    "encoding": "uint16: h = minM + (v/65535)*(maxM-minM)",
+    "source": "AWS Terrain Tiles (terrarium), z15",
+    "attribution": "Terrain: AWS Open Data / Mapzen",
+    "nodata_policy": "terrarium invalid pixels masked + nearest-neighbour inpainted (470938/471552 cells valid before inpainting)"
+  },
+  "bbox": {
+    "west": 76.975,
+    "south": 31.768,
+    "east": 77.006,
+    "north": 31.789
+  },
+  "generated": "2026-09-12T13:17:47Z"
+}

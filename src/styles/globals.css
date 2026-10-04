@@ -1,0 +1,142 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  font-size: 14px;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 214, 209, 0.18);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(200, 214, 209, 0.32); background-clip: content-box; }
+
+/* ── component-level utilities ─────────────────────────────────────────────── */
+@layer components {
+  .glass {
+    background: var(--surface-1);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-glass);
+  }
+  .glass-2 { background: var(--surface-2); border: 1px solid var(--hairline); }
+  .rail { background: var(--surface-1); backdrop-filter: blur(16px); border-left: 1px solid var(--hairline); }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: var(--r-pill);
+    background: var(--surface-2); border: 1px solid var(--hairline);
+    font-size: 12px; color: var(--text-2); white-space: nowrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 40px; padding: 8px 14px; border-radius: var(--r-md);
+    background: var(--surface-2); border: 1px solid var(--hairline);
+    color: var(--text); cursor: pointer; transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  }
+  .btn:hover:not(:disabled) { background: var(--surface-3); border-color: var(--hairline-strong); }
+  .btn:disabled, .btn[aria-disabled='true'] { opacity: 0.45; cursor: not-allowed; }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 600; }
+  .btn-primary:hover:not(:disabled) { background: var(--accent-dim); }
+  .btn-icon { min-width: 40px; padding: 8px; }
+  .seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: var(--r-pill); background: var(--surface-2); border: 1px solid var(--hairline); }
+  .seg > button {
+    border: 0; background: transparent; color: var(--text-3);
+    padding: 6px 14px; border-radius: var(--r-pill); cursor: pointer; font-weight: 600; font-size: 12.5px;
+    letter-spacing: 0.02em; transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+  .seg > button[aria-pressed='true'] { background: var(--accent); color: var(--accent-ink); }
+  .seg > button:not([aria-pressed='true']):hover { color: var(--text); }
+  .scrim-top { background: var(--scrim); }
+  .label-h { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); font-weight: 700; }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .divider { height: 1px; background: var(--hairline); }
+}
+
+/* ── 3D scene DOM overlays ─────────────────────────────────────────────────── */
+.poi-label {
+  transform: translate(-50%, -100%);
+  padding: 3px 8px; border-radius: var(--r-pill);
+  background: rgba(6, 14, 12, 0.82); color: #eef7f4;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  font-size: 11.5px; font-weight: 600; white-space: nowrap; pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.poi-label.sub { font-weight: 500; opacity: 0.92; border-color: rgba(200, 214, 209, 0.28); }
+.poi-label .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+
+/* ── MapLibre tweaks (dark control chrome over imagery) ───────────────────── */
+.maplibregl-ctrl-group {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--hairline) !important;
+  backdrop-filter: blur(14px);
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+}
+.maplibregl-ctrl-group button { background: transparent !important; }
+.maplibregl-ctrl-group button + button { border-top: 1px solid var(--hairline) !important; }
+.maplibregl-ctrl button .maplibregl-ctrl-icon { filter: invert(1) hue-rotate(150deg); }
+:root[data-theme='light'] .maplibregl-ctrl button .maplibregl-ctrl-icon { filter: none; }
+.maplibregl-ctrl-attrib {
+  background: rgba(6, 14, 12, 0.72) !important;
+  color: #cfe3dd !important;
+  font-size: 10.5px !important;
+  border-radius: var(--r-pill) 0 0 0;
+}
+.maplibregl-ctrl-attrib a { color: #9fe8da !important; }
+.maplibregl-ctrl-scale {
+  background: rgba(6, 14, 12, 0.7) !important; border-color: rgba(255,255,255,0.5) !important;
+  color: #eaf6f2 !important; font-size: 10.5px !important;
+}
+.poi-marker {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 2px solid rgba(4, 12, 10, 0.85);
+  box-shadow: 0 0 0 2px rgba(94, 234, 212, 0.25);
+}
+.poi-marker-label {
+  margin-left: 8px; padding: 2px 7px; border-radius: var(--r-pill);
+  background: rgba(6, 14, 12, 0.8); color: #eef7f4; font-size: 11px; font-weight: 600;
+  border: 1px solid rgba(200, 214, 209, 0.2); white-space: nowrap;
+}
+.manual-map-label {
+  display: flex; align-items: center; pointer-events: none; white-space: nowrap;
+  color: #eef7f4; font-size: 11px; font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+.manual-map-label-dot {
+  width: 10px; height: 10px; margin-right: 8px; border-radius: 50%;
+  background: #ff304f; border: 2px solid rgba(4, 12, 10, 0.9);
+  box-shadow: 0 0 0 2px rgba(255, 48, 79, 0.3);
+}
+
+/* ── sheet / panel transitions ────────────────────────────────────────────── */
+.sheet { transition: transform var(--dur) var(--ease); }
+.fade-in { animation: fade-in var(--dur) var(--ease) both; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes pulse-ring { 0% { transform: scale(0.7); opacity: 0.9; } 100% { transform: scale(1.6); opacity: 0; } }
+
+/* ── print sheet (QR wayfinding cards) ────────────────────────────────────── */
+@media print {
+  body { background: #fff; color: #000; }
+  .no-print { display: none !important; }
+  .print-card { break-inside: avoid; border: 1px solid #999; border-radius: 10px; padding: 12px; }
+}

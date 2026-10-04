@@ -1,0 +1,56 @@
+{
+  "note": "Corrected geometry for generated roads (exported from the in-app route editor). way-762330812 is trimmed at the Oak Mess (osm-762330814) wall: the OSM way originally terminated INSIDE the building (bake-decade error). 0.15 m gap left at the wall so no clamp ambiguity remains; routes end as honest dead-ends.",
+  "fixes": {
+    "way-762330812": [
+      [
+        76.9986235,
+        31.7818319
+      ],
+      [
+        76.998599,
+        31.781831
+      ],
+      [
+        76.998602,
+        31.781727
+      ],
+      [
+        76.99866,
+        31.781665
+      ],
+      [
+        76.998733,
+        31.781607
+      ],
+      [
+        76.998834,
+        31.781593
+      ],
+      [
+        76.998932,
+        31.781597
+      ],
+      [
+        76.999026,
+        31.781639
+      ],
+      [
+        76.99909,
+        31.781699
+      ],
+      [
+        76.999113,
+        31.781763
+      ],
+      [
+        76.999125,
+        31.781811
+      ],
+      [
+        76.999184,
+        31.781825
+      ]
+    ]
+  },
+  "hidden": []
+}

@@ -1,0 +1,4 @@
+{
+  "note": "Indoor navigation index. This file is intentionally empty: no building's floor plan has been surveyed and digitised yet, and none will be invented. Add entries here as plans are completed — the app activates automatically, see docs/INDOOR_CONTRACT.md.",
+  "buildings": []
+}

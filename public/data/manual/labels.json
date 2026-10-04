@@ -1,0 +1,4 @@
+{
+  "note": "Labels for things that are NOT buildings: gates, viewpoints, water points, ATMs, shrines. Rendered with the same style, font and size as the building labels, so the map reads consistently.",
+  "labels": []
+}

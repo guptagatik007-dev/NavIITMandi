@@ -1,0 +1,84 @@
+{
+ "type": "FeatureCollection",
+ "note": "Footprints added by hand where OSM/Overture had none. Draw them in the in-app editor (?edit=1 -> Add building) and paste the export here. WGS84 lon/lat, ring must be closed or open \u2014 both are accepted.",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "ovt-manual-plaza-hall",
+    "name": "Amphitheatre NE hall",
+    "cat": "unknown",
+    "floors": 3,
+    "f2f": 3.6,
+    "roof": "flat",
+    "pitch": 0,
+    "wall": "plaster_paint_white",
+    "note": "digitized from z18 HD imagery (~0.51 m/px), approximate outline \u2014 was missing from generated data",
+    "verifiedBy": "v3.5-plaza-digitized",
+    "verifiedOn": "2026-10-01"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       76.99481167,
+       31.78127324
+      ],
+      [
+       76.9950907,
+       31.78125956
+      ],
+      [
+       76.99508534,
+       31.78106342
+      ],
+      [
+       76.99480093,
+       31.78107711
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "ovt-manual-plaza-rectb",
+    "name": "Amphitheatre N annex B",
+    "cat": "unknown",
+    "floors": 2,
+    "f2f": 3.6,
+    "roof": "flat",
+    "pitch": 0,
+    "wall": "plaster_paint_white",
+    "note": "digitized from z18 HD imagery (~0.51 m/px), approximate outline \u2014 was missing from generated data",
+    "verifiedBy": "v3.5-plaza-digitized",
+    "verifiedOn": "2026-10-01"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       76.99499411,
+       31.78160621
+      ],
+      [
+       76.9951551,
+       31.78156972
+      ],
+      [
+       76.99511754,
+       31.78146937
+      ],
+      [
+       76.99496192,
+       31.78150586
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
